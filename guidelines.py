@@ -2,7 +2,7 @@
 import time
 
 def guid():
-    print("- Hello! thank you for your interest in learning alphabets and your welcome on Alpha_learning_app\n")
+    print("- Hello! thank you for your interest in learning alphabets and you're welcome on Alpha_learning_app\n")
     print("- This is a game that will help you to learn aphabets, the game have 3 levels: level 1 for beginners, level 2 for intermediate, and level 3 which is advanced level.\n")
 
     time.sleep (1)
