@@ -20,4 +20,4 @@ def out_come():
     print("Now, it is time to starts the program, welcome!!")
     print("")
     sleep(1)
-out_come()
+
