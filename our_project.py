@@ -164,7 +164,8 @@ def score_update():
         option()
         level_upgrade(level_list)
     else:
-        speak("SORRY! YOU HAVE FAILED THIS LEVEL! TRY AGAIN")    
+        speak("SORRY! YOU HAVE FAILED THIS LEVEL! TRY AGAIN")
+        option2()   
 
 def check2_alphabet(score2_list):
     """Check if alphabet is correct"""
@@ -197,14 +198,45 @@ def score2_update():
         level_upgrade(level_list)
     else:
         speak("SORRY! YOU HAVE FAILED THIS LEVEL! TRY AGAIN")
+        option3()
+        
 
-      
+def option2():
+    user_option = input("WOULD YOU LIKE TO REPEAT THIS LEVEL? y/n ")
+    if user_option.upper() == "Y":
+        del score_list[-1]
+        speak("THIS IS LEVEL ONE")
+        speak("WE ARE GOING TO SPELL THE ALPHABET FOR YOU! PAY ATTENTION")
+        time.sleep(2)
+        print("GET READY FOR THE QUIZ: ")  
+        time.sleep(2)
+        speak_alphabet(alphabet)
+        respell() 
+        score_update()
+        
+    elif user_option.upper() == "N":
+        print("quitting....")
+        quit()
+    else:
+        print("INVALID INPUT")        
+
+def option3():
+    user_option = input("WOULD YOU LIKE TO REPEAT THIS LEVEL? y/n ")
+    if user_option.upper() == "Y":
+        del score2_list[-1]
+        speak("THIS IS LEVEL TWO")
+        speak("GET READY FOR THE QUIZ: ") 
+        time.sleep(2)
+        score2_update() 
+    elif user_option.upper() == "N":
+        print("quitting...")
+        quit()
+    else:
+        print("INVALID INPUT")              
+
+
 #out_come(outcomes)
 #guide_line(guidelines)
-
-
-
-
 
 # LEVEL 1
 if level_list[-1] == 1 :
