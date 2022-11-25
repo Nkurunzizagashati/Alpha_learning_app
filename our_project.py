@@ -9,7 +9,7 @@ from gtts import gTTS
 from random_word import RandomWords
 import getpass
 
-my_dict = {'karenzi': '@12345'}
+my_dict = {'manzi': '@12345'}
 
 
 #asking our user to login
@@ -41,14 +41,14 @@ while running:
         print("INVALID INPUT")             
 
 # OUR VARIABLES
-outcomes = "Welcome to the world of searching knowledge and skills. At the end of the program you should be able to write and spell the alphabet, connect multiple alphabets to make a spelled word, write the names of things that surround you, and communicate through writing. You should also have the basic skills to perform well the rest of your education journey. Now, it is time to start the program, welcome!"
-guidelines = "Hello! thank you for your interest in learning alphabet and you're welcome on Alpha_learning_app. This is a game that will help you to learn the aphabet. The game has 3 levels: level 1 for beginners, level 2 for intermediate, and level 3 which is the advanced level. At the end of each level you will be given a quiz which you must pass with at least 75% to continue to the next level. If you fail the quiz, you will have a chance to repeat again. Good luck"
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+outcomes = "Welcome to the world of searching knowledge and skills. At the end of the program you should be able to write and spell the alphabet, connect multiple alphabets to make a spelled word, write the names of things that surround you, and communicate through writing, Welcome!"
+guidelines = "Hello!, The game has 3 levels: level 1 for beginners, level 2 for intermediate, and level 3 which is the advanced level. At the end of each level you will be given a quiz which you must pass with at least 75% to continue to the next level. If you fail the quiz, you will have a chance to repeat again. Good luck"
+alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]  
 score_list = [0]
 level_list = [1]
 score1_list = [0]
 score2_list = [0]
-word_list = ['cat','dog','cup','bag','cow','den','goat','run','big','ball','play']
+word_list = ['cat','dog','cup','bag','cow','den','goat','run','big','ball','play','toy','meat','key']
 
 
 def out_come(outcomes):
@@ -106,7 +106,7 @@ def check1_alphabet(score1_list):
         print(f"YOUR SCORE REMAINS {(((score1_list[-1])/5) * 100)}%")
 
 def questions1(score1_list):
-    for item in range(5):
+    for item in range(3):
         check1_alphabet(score1_list)
     return (((score1_list[-1])/5) * 100)
 
@@ -116,6 +116,7 @@ def score1_update():
         speak("CONGRATULATIONS! YOU HAVE PASSED THIS LEVEL")
     else:
         speak("SORRY! YOU HAVE FAILED THIS LEVEL! TRY AGAIN")
+        option4()
 
 def level_upgrade(level_list):
     level_list.append(level_list[-1] + 1)
@@ -234,9 +235,22 @@ def option3():
     else:
         print("INVALID INPUT")              
 
+def option4():
+    user_option = input("WOULD YOU LIKE TO REPEAT THIS LEVEL? y/n ")
+    if user_option.upper() == "Y":
+        del score1_list[-1]
+        speak("THIS IS LEVEL THREE")
+        speak("GET READY FOR THE QUIZ: ") 
+        time.sleep(2)
+        score1_update()
+    elif user_option.upper() == "N":
+        print("quitting...")
+        quit()
+    else:
+        print("INVALID INPUT")
 
 #out_come(outcomes)
-#guide_line(guidelines)
+guide_line(guidelines)
 
 # LEVEL 1
 if level_list[-1] == 1 :
