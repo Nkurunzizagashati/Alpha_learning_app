@@ -17,7 +17,7 @@ def out_come():
     sleep(2)
     print("6. Listen some words from Radios and television")
     sleep(2)
-    print("Now, it is time to starts the program, welcome!!")
+    print("Now, it is time to starts the program, welcome!")
     print("")
     sleep(1)
 
